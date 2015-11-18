@@ -19,5 +19,3 @@
 - Simulator 9.1
 
 
-## たば
-- test
