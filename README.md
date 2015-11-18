@@ -17,6 +17,3 @@
 
 - Xcode 7.1 (7B91b)
 - Simulator 9.1
-
-##test
-test
