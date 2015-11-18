@@ -18,7 +18,14 @@
 - Xcode 7.1.1 (7B1005)
 - Simulator 9.1
 
+<<<<<<< Updated upstream
 
 ##メンバー
 
 - 145709J　田場典智
+=======
+<<<<<<< Updated upstream
+=======
+たばたば
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
