@@ -74,9 +74,18 @@ class DetailViewController: UIViewController {
     }
     
     func myAlarm(myStr: String) {
-        if(myStr=="11:1:50 THU"){
-            print("test alarm")
+        if(myStr=="15:18:40 WED"){
+            choiceBtn()
         }
+    }
+    
+    func choiceBtn() {
+        let alertController = UIAlertController(title: "緊急・妥協用", message: "妥協しますか？", preferredStyle: .Alert)
+        let otherAction = UIAlertAction(title: "Yes", style: .Default) {
+            action in print("Yes")
+        }
+        alertController.addAction(otherAction)
+        presentViewController(alertController, animated: true, completion: nil)
     }
 
 
