@@ -18,14 +18,15 @@
 - Xcode 7.1.1 (7B1005)
 - Simulator 9.1
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+145736F　最強の男航
+=======
+>>>>>>> origin/master
 
 ##メンバー
 
 - 145709J　田場典智
-=======
-<<<<<<< Updated upstream
-=======
-たばたば
->>>>>>> Stashed changes
->>>>>>> Stashed changes
+-145740D　金城芳典
