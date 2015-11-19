@@ -60,4 +60,20 @@ endFlag = true
 
 // function
 
+// set on/off func by kazuki nagamine
+// alarmのon/offを表すswitchingFlag 初期状態はfalse
+var switchingFlag = false;
+// bool型の引数を受け取ってswitchingFlagの値を変えるsetOnOff
+func setOnOff(flag : Bool){
+    switchingFlag = flag; // on=true / off=false
+    // test用にprint
+    if switchingFlag {
+        print("on")
+    } else {
+        print("off")
+    }
+}
+// test
+var test_flag = true
+setOnOff(test_flag) // print "on\n"
 
