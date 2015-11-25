@@ -77,3 +77,11 @@ func setOnOff(flag : Bool){
 var test_flag = true
 setOnOff(test_flag) // print "on\n"
 
+
+
+
+
+
+
+
+

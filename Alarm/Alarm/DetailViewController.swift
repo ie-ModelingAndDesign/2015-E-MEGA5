@@ -8,6 +8,13 @@
 
 import UIKit
 
+startApp(){
+    
+    FILE fp;
+    fp=open();
+    fp=coles();
+}
+
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
@@ -74,7 +81,7 @@ class DetailViewController: UIViewController {
     }
     
     func myAlarm(myStr: String) {
-        if(myStr=="15:18:40 WED"){
+        if(myStr=="15:51:45 WED"){
             choiceBtn()
         }
     }
