@@ -81,7 +81,11 @@ class DetailViewController: UIViewController {
     }
     
     func myAlarm(myStr: String) {
+<<<<<<< Updated upstream
         if(myStr=="15:51:45 WED"){
+=======
+        if(myStr=="11:09:40 WED"){
+>>>>>>> Stashed changes
             choiceBtn()
         }
     }
