@@ -2,8 +2,8 @@
 .DS_Store
 
 *.pbxproj
+!project.pbxproj
 
-*.pbxproj
 
 Alarm/Alarm.xcodeproj/project.pbxproj
 

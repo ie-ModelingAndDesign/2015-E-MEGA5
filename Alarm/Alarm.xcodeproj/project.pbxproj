@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61DFBC5B1C21442800ED9B52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B300C571BF433BA006A2462 /* Main.storyboard */; };
+		61DFBC5C1C21442A00ED9B52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B300C571BF433BA006A2462 /* Main.storyboard */; };
 		7B300C521BF433BA006A2462 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B300C511BF433BA006A2462 /* AppDelegate.swift */; };
 		7B300C541BF433BA006A2462 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B300C531BF433BA006A2462 /* MasterViewController.swift */; };
 		7B300C561BF433BA006A2462 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B300C551BF433BA006A2462 /* DetailViewController.swift */; };
@@ -242,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61DFBC5B1C21442800ED9B52 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61DFBC5C1C21442A00ED9B52 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +492,7 @@
 				7B300C7A1BF433BB006A2462 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B300C7B1BF433BB006A2462 /* Build configuration list for PBXNativeTarget "AlarmTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +501,7 @@
 				7B300C7D1BF433BB006A2462 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B300C7E1BF433BB006A2462 /* Build configuration list for PBXNativeTarget "AlarmUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +510,7 @@
 				7B300C801BF433BB006A2462 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
