@@ -1,17 +1,28 @@
 # gitに無視して欲しいファイルはここに書き込もう
-.DS_Store
 
-*.pbxproj
-!project.pbxproj
+# Created by https://www.gitignore.io/api/xcode
 
+### Xcode ###
+# Xcode
+#
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
-!Alarm/Alarm.xcodeproj/project.pbxproj
+## Build generated
+build/
+DerivedData
 
-Alarm/Alarm.xcodeproj/project.xcworkspace/xcuserdata/e145709.xcuserdatad/UserInterfaceState.xcuserstate
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
 
-Alarm/Alarm.xcodeproj/xcuserdata/e145709.xcuserdatad/xcschemes/Alarm.xcscheme
-
-Alarm/Alarm.xcodeproj/xcuserdata/e145709.xcuserdatad/xcschemes/xcschememanagement.plist
-
-!Alarm/Alarm/DetailViewController.swift
-
+## Other
+*.xccheckout
+*.moved-aside
+*.xcuserstate
