@@ -2,8 +2,8 @@
 //  AlarmUITests.swift
 //  AlarmUITests
 //
-//  Created by kazuki nagamine on 11/12/15.
-//  Copyright © 2015 MEGA5. All rights reserved.
+//  Created by Masataka on 2015/12/17.
+//  Copyright © 2015年 Masataka. All rights reserved.
 //
 
 import XCTest
