@@ -1,15 +1,15 @@
 //
-//  AlarmTests.swift
-//  AlarmTests
+//  aaaaaTests.swift
+//  aaaaaTests
 //
-//  Created by Masataka on 2015/12/17.
+//  Created by Masataka on 2015/12/02.
 //  Copyright © 2015年 Masataka. All rights reserved.
 //
 
 import XCTest
-@testable import Alarm
+@testable import aaaaa
 
-class AlarmTests: XCTestCase {
+class aaaaaTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

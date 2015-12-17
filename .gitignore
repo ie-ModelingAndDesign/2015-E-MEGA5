@@ -2,10 +2,10 @@
 .DS_Store
 
 *.pbxproj
+!project.pbxproj
 
-*.pbxproj
 
-Alarm/Alarm.xcodeproj/project.pbxproj
+!Alarm/Alarm.xcodeproj/project.pbxproj
 
 Alarm/Alarm.xcodeproj/project.xcworkspace/xcuserdata/e145709.xcuserdatad/UserInterfaceState.xcuserstate
 
@@ -13,6 +13,5 @@ Alarm/Alarm.xcodeproj/xcuserdata/e145709.xcuserdatad/xcschemes/Alarm.xcscheme
 
 Alarm/Alarm.xcodeproj/xcuserdata/e145709.xcuserdatad/xcschemes/xcschememanagement.plist
 
-Alarm/Alarm/DetailViewController.swift
+!Alarm/Alarm/DetailViewController.swift
 
-*.pbxproj
