@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  aaaaa
+//  AlarmV2
 //
 //  Created by Masataka on 2015/12/02.
 //  Copyright © 2015年 Masataka. All rights reserved.

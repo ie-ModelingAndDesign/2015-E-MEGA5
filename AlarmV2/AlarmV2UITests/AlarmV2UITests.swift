@@ -1,6 +1,6 @@
 //
-//  aaaaaUITests.swift
-//  aaaaaUITests
+//  AlarmV2UITests.swift
+//  AlarmV2UITests
 //
 //  Created by Masataka on 2015/12/02.
 //  Copyright © 2015年 Masataka. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class aaaaaUITests: XCTestCase {
+class AlarmV2UITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

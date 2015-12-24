@@ -12,8 +12,8 @@
 		610237B01C0ECF47005F6490 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 610237AE1C0ECF47005F6490 /* Main.storyboard */; };
 		610237B21C0ECF47005F6490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 610237B11C0ECF47005F6490 /* Assets.xcassets */; };
 		610237B51C0ECF47005F6490 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 610237B31C0ECF47005F6490 /* LaunchScreen.storyboard */; };
-		610237C01C0ECF47005F6490 /* aaaaaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610237BF1C0ECF47005F6490 /* aaaaaTests.swift */; };
-		610237CB1C0ECF47005F6490 /* aaaaaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610237CA1C0ECF47005F6490 /* aaaaaUITests.swift */; };
+		610237C01C0ECF47005F6490 /* AlarmV2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610237BF1C0ECF47005F6490 /* AlarmV2Tests.swift */; };
+		610237CB1C0ECF47005F6490 /* AlarmV2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610237CA1C0ECF47005F6490 /* AlarmV2UITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,14 +22,14 @@
 			containerPortal = 6102379F1C0ECF47005F6490 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 610237A61C0ECF47005F6490;
-			remoteInfo = aaaaa;
+			remoteInfo = AlarmV2;
 		};
 		610237C71C0ECF47005F6490 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6102379F1C0ECF47005F6490 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 610237A61C0ECF47005F6490;
-			remoteInfo = aaaaa;
+			remoteInfo = AlarmV2;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -42,10 +42,10 @@
 		610237B41C0ECF47005F6490 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		610237B61C0ECF47005F6490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		610237BB1C0ECF47005F6490 /* AlarmV2.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlarmV2.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		610237BF1C0ECF47005F6490 /* aaaaaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aaaaaTests.swift; sourceTree = "<group>"; };
+		610237BF1C0ECF47005F6490 /* AlarmV2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmV2Tests.swift; sourceTree = "<group>"; };
 		610237C11C0ECF47005F6490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		610237C61C0ECF47005F6490 /* AlarmV2.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlarmV2.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		610237CA1C0ECF47005F6490 /* aaaaaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aaaaaUITests.swift; sourceTree = "<group>"; };
+		610237CA1C0ECF47005F6490 /* AlarmV2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmV2UITests.swift; sourceTree = "<group>"; };
 		610237CC1C0ECF47005F6490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,9 +77,9 @@
 		6102379E1C0ECF47005F6490 = {
 			isa = PBXGroup;
 			children = (
-				610237A91C0ECF47005F6490 /* aaaaa */,
-				610237BE1C0ECF47005F6490 /* aaaaaTests */,
-				610237C91C0ECF47005F6490 /* aaaaaUITests */,
+				610237A91C0ECF47005F6490 /* AlarmV2 */,
+				610237BE1C0ECF47005F6490 /* AlarmV2Tests */,
+				610237C91C0ECF47005F6490 /* AlarmV2UITests */,
 				610237A81C0ECF47005F6490 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,7 +94,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		610237A91C0ECF47005F6490 /* aaaaa */ = {
+		610237A91C0ECF47005F6490 /* AlarmV2 */ = {
 			isa = PBXGroup;
 			children = (
 				610237AA1C0ECF47005F6490 /* AppDelegate.swift */,
@@ -104,25 +104,25 @@
 				610237B31C0ECF47005F6490 /* LaunchScreen.storyboard */,
 				610237B61C0ECF47005F6490 /* Info.plist */,
 			);
-			path = aaaaa;
+			path = AlarmV2;
 			sourceTree = "<group>";
 		};
-		610237BE1C0ECF47005F6490 /* aaaaaTests */ = {
+		610237BE1C0ECF47005F6490 /* AlarmV2Tests */ = {
 			isa = PBXGroup;
 			children = (
-				610237BF1C0ECF47005F6490 /* aaaaaTests.swift */,
+				610237BF1C0ECF47005F6490 /* AlarmV2Tests.swift */,
 				610237C11C0ECF47005F6490 /* Info.plist */,
 			);
-			path = aaaaaTests;
+			path = AlarmV2Tests;
 			sourceTree = "<group>";
 		};
-		610237C91C0ECF47005F6490 /* aaaaaUITests */ = {
+		610237C91C0ECF47005F6490 /* AlarmV2UITests */ = {
 			isa = PBXGroup;
 			children = (
-				610237CA1C0ECF47005F6490 /* aaaaaUITests.swift */,
+				610237CA1C0ECF47005F6490 /* AlarmV2UITests.swift */,
 				610237CC1C0ECF47005F6490 /* Info.plist */,
 			);
-			path = aaaaaUITests;
+			path = AlarmV2UITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,7 +141,7 @@
 			dependencies = (
 			);
 			name = AlarmV2;
-			productName = aaaaa;
+			productName = AlarmV2;
 			productReference = 610237A71C0ECF47005F6490 /* AlarmV2.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -159,7 +159,7 @@
 				610237BD1C0ECF47005F6490 /* PBXTargetDependency */,
 			);
 			name = AlarmV2Tests;
-			productName = aaaaaTests;
+			productName = AlarmV2Tests;
 			productReference = 610237BB1C0ECF47005F6490 /* AlarmV2.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -177,7 +177,7 @@
 				610237C81C0ECF47005F6490 /* PBXTargetDependency */,
 			);
 			name = AlarmV2UITests;
-			productName = aaaaaUITests;
+			productName = AlarmV2UITests;
 			productReference = 610237C61C0ECF47005F6490 /* AlarmV2.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
@@ -268,7 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				610237C01C0ECF47005F6490 /* aaaaaTests.swift in Sources */,
+				610237C01C0ECF47005F6490 /* AlarmV2Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				610237CB1C0ECF47005F6490 /* aaaaaUITests.swift in Sources */,
+				610237CB1C0ECF47005F6490 /* AlarmV2UITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,9 +400,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = aaaaa/Info.plist;
+				INFOPLIST_FILE = AlarmV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = a.aaaaa;
+				PRODUCT_BUNDLE_IDENTIFIER = a.AlarmV2;
 				PRODUCT_NAME = AlarmV2;
 			};
 			name = Debug;
@@ -411,9 +411,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = aaaaa/Info.plist;
+				INFOPLIST_FILE = AlarmV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = a.aaaaa;
+				PRODUCT_BUNDLE_IDENTIFIER = a.AlarmV2;
 				PRODUCT_NAME = AlarmV2;
 			};
 			name = Release;
@@ -422,9 +422,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = aaaaaTests/Info.plist;
+				INFOPLIST_FILE = AlarmV2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = a.aaaaaTests;
+				PRODUCT_BUNDLE_IDENTIFIER = a.AlarmV2Tests;
 				PRODUCT_NAME = AlarmV2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlarmV2.app/AlarmV2";
 			};
@@ -434,9 +434,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = aaaaaTests/Info.plist;
+				INFOPLIST_FILE = AlarmV2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = a.aaaaaTests;
+				PRODUCT_BUNDLE_IDENTIFIER = a.AlarmV2Tests;
 				PRODUCT_NAME = AlarmV2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlarmV2.app/AlarmV2";
 			};
@@ -445,11 +445,11 @@
 		610237D61C0ECF47005F6490 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = aaaaaUITests/Info.plist;
+				INFOPLIST_FILE = AlarmV2UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = a.aaaaaUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = a.AlarmV2UITests;
 				PRODUCT_NAME = AlarmV2;
-				TEST_TARGET_NAME = aaaaa;
+				TEST_TARGET_NAME = AlarmV2;
 				USES_XCTRUNNER = YES;
 			};
 			name = Debug;
@@ -457,11 +457,11 @@
 		610237D71C0ECF47005F6490 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = aaaaaUITests/Info.plist;
+				INFOPLIST_FILE = AlarmV2UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = a.aaaaaUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = a.AlarmV2UITests;
 				PRODUCT_NAME = AlarmV2;
-				TEST_TARGET_NAME = aaaaa;
+				TEST_TARGET_NAME = AlarmV2;
 				USES_XCTRUNNER = YES;
 			};
 			name = Release;
