@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jjf-qV-c72">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jjf-qV-c72">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--View Controller-->
         <scene sceneID="zzG-Nl-Eud">
             <objects>
-                <tableViewController id="jjf-qV-c72" sceneMemberID="viewController">
+                <tableViewController id="jjf-qV-c72" customClass="ViewController" customModule="AlarmV2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9T0-vk-8Bp">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,6 +35,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mLr-cs-Kaw">
                                                     <rect key="frame" x="485" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="WeekAction:" destination="jjf-qV-c72" eventType="valueChanged" id="27z-M0-q6O"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -65,6 +68,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6eI-EP-oMR">
                                                     <rect key="frame" x="485" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="MonAction:" destination="jjf-qV-c72" eventType="valueChanged" id="9uY-XL-ydY"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -91,6 +97,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E7V-0e-086">
                                                     <rect key="frame" x="485" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="TueAction:" destination="jjf-qV-c72" eventType="valueChanged" id="UMS-AF-iWY"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -117,6 +126,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="frX-gX-AbS">
                                                     <rect key="frame" x="485" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="WedAction:" destination="jjf-qV-c72" eventType="valueChanged" id="WcU-0f-UKh"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -146,6 +158,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fDR-V0-3GY">
                                                     <rect key="frame" x="485" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="ThursAction:" destination="jjf-qV-c72" eventType="valueChanged" id="9t8-Me-6jN"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -175,6 +190,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oHj-7g-et3">
                                                     <rect key="frame" x="485" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="FriAction:" destination="jjf-qV-c72" eventType="valueChanged" id="EaS-KA-FLU"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -204,6 +222,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="73Q-vr-vFx">
                                                     <rect key="frame" x="485" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="SatAction:" destination="jjf-qV-c72" eventType="valueChanged" id="vfy-c7-PEt"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -230,6 +251,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PeR-IO-Mes">
                                                     <rect key="frame" x="485" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="SunAction:" destination="jjf-qV-c72" eventType="valueChanged" id="8fG-YF-DiB"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -303,6 +327,16 @@
                             <outlet property="delegate" destination="jjf-qV-c72" id="EQx-QX-VGC"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="FriSwitch" destination="oHj-7g-et3" id="CCB-2R-JzJ"/>
+                        <outlet property="MonSwitch" destination="6eI-EP-oMR" id="DF1-bE-cH3"/>
+                        <outlet property="SatSwitch" destination="73Q-vr-vFx" id="7YA-Q3-1bx"/>
+                        <outlet property="SunSwitch" destination="PeR-IO-Mes" id="UJv-My-yg0"/>
+                        <outlet property="ThursSwitch" destination="fDR-V0-3GY" id="za2-2j-hMj"/>
+                        <outlet property="TueSwitch" destination="E7V-0e-086" id="KW1-jm-O2v"/>
+                        <outlet property="WedSwitch" destination="frX-gX-AbS" id="gLO-Ud-8dD"/>
+                        <outlet property="WeekSwitch" destination="mLr-cs-Kaw" id="Hee-KE-Sn2"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f1A-OJ-ycj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
