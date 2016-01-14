@@ -21,7 +21,9 @@ class ViewController: UIViewController {
         let defaults = NSUserDefaults.standardUserDefaults()
         // データの作成
         let array: [NSString] = [
-            “test”,
+            "http://www.apple.com",
+            "https://twitter.com/",
+            "http://www.9revolution9.com",
         ]
         defaults.setObject(array, forKey: "bookmarks")
         let successful = defaults.synchronize()
