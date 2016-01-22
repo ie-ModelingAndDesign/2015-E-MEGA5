@@ -10,14 +10,17 @@ import UIKit
 
 class ViewController: UITableViewController {
     
-    // get NSUserDefaults instance
+    // Get the NSUserDefaults instance
     let defaults = NSUserDefaults.standardUserDefaults()
-    
+
+    // Main rutine
     override func viewDidLoad() {
         super.viewDidLoad()
-        // initialization
+
+        // Initialization
         initialize()
-        // schedule manager
+
+        // The schedule manager
         _ = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "update", userInfo: nil, repeats: true)
     }
     
@@ -25,13 +28,17 @@ class ViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
     // IB variables
-    // set button
+
+    // The set button
     @IBOutlet weak var SetButton: UIBarButtonItem!
-    // on/off button
+
+    // The On/Off button
     @IBOutlet weak var onOffSwitch: UISwitch!
-    // week buttons
+
+    // Week buttons
     @IBOutlet weak var MonSwitch: UISwitch!
     @IBOutlet weak var TueSwitch: UISwitch!
     @IBOutlet weak var WedSwitch: UISwitch!
@@ -39,39 +46,49 @@ class ViewController: UITableViewController {
     @IBOutlet weak var FriSwitch: UISwitch!
     @IBOutlet weak var SatSwitch: UISwitch!
     @IBOutlet weak var SunSwitch: UISwitch!
-    // date pickers
+
+    // Date pickers
     @IBOutlet weak var start_dp: UIDatePicker!
     @IBOutlet weak var stop_dp: UIDatePicker!
     
-    // uniqueness variables
-    // setting variables
+
+    // Uniqueness variables
+
+    // Setting variables
     private var onOffStatus: Bool = false
     private var startTime: String = "0000"
     private var stopTime: String = "0000"
-    // weekFlags
+
+    // WeekFlags
     private var weekFlags = [false, false, false, false, false, false, false]
-    // important variables
-    private var alertFlag: Bool = false
+    
+    // Alert function's variables
     private var weekday: Int = 99
-    // temp variables
+    private var rnd_str: NSString = ""
+    private var ans_str: String? = ""
+    private let myAlert = UIAlertController(title: "Sleep alert", message: "exit", preferredStyle: .Alert)
+
+    // Temp variables
     private var tempStartTime: String = "0000"
     private var tempStopTime: String = "0000"
     private var tempWeekFlags = [false, false, false, false, false, false, false]
-    // let variables
+
+    // Formating variables
+    private let formatter = NSDateFormatter()
     private let format: String = "HHmm"
-    
+
+
     // IB functions
-    // setting function
+
+    // The setting function
     @IBAction func setting(sender: AnyObject) {
-        // set date format
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = format
+
+        // Get a temporary variable
         startTime = formatter.stringFromDate(start_dp.date)
         stopTime = formatter.stringFromDate(stop_dp.date)
         weekFlags = tempWeekFlags
-        print("weekFlags: \(weekFlags)")
-        print("tempWeekFlags: \(tempWeekFlags)")
-        // store vars to NSUserDefaults
+
+        // Store vars to NSUserDefaults
         defaults.setObject(startTime, forKey: "startTime")
         defaults.setObject(stopTime, forKey: "stopTime")
         for i in 0...6 { defaults.setObject(weekFlags[i], forKey: "weekFlags\(i)") }
@@ -79,82 +96,106 @@ class ViewController: UITableViewController {
         if successful {
             print("succeeded to store data!")
         }
-        // test print
+        
+        // Confirmation alert
+        let set_alert: UIAlertController = UIAlertController(title: "", message: "Setting complete!", preferredStyle: .Alert)
+        self.presentViewController(set_alert, animated: true) { () -> Void in
+            let delay = 0.1 * Double(NSEC_PER_SEC)
+            let time  = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+            dispatch_after(time, dispatch_get_main_queue(), {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            })
+        }
+
+        // Test print
+        print("weekFlags: \(weekFlags)")
+        print("tempWeekFlags: \(tempWeekFlags)")
         print("settign complete!")
     }
-    // on/off function
+
+    // The On/Off function
     @IBAction func onOffAction(sender: AnyObject) {
+
         onOffStatus=onOffSwitch.on
         changeButtonState()
-        // store var to NSUserDefaults
+
+        // Store the variable to the NSUserDefaults
         defaults.setObject(onOffStatus, forKey: "onOffStatus")
         let successful = defaults.synchronize()
         if successful {
             print("succeeded to store data!")
         }
-        // test print
+
+        // Test print
         print("App \(onOffStatus)")
         
     }
-    // week button functions
+
+    // Week button functions
     @IBAction func SunAction(sender: UISwitch) {
         changeWeekFlagState(0, button: SunSwitch)
-        // test print
+        // Test print
         print("Sunday is \(tempWeekFlags[0])")
     }
     @IBAction func MonAction(sender: UISwitch) {
         changeWeekFlagState(1, button: MonSwitch)
-        // test print
+        // Test print
         print("Monday is \(tempWeekFlags[1])")
     }
     @IBAction func TueAction(sender: UISwitch) {
         changeWeekFlagState(2, button: TueSwitch)
-        // test print
+        // Test print
         print("Tueday is \(tempWeekFlags[2])")
     }
     @IBAction func WedAction(sender: UISwitch) {
         changeWeekFlagState(3, button: WedSwitch)
-        // test print
+        // Test print
         print("Wedday is \(tempWeekFlags[3])")
     }
     @IBAction func ThuAction(sender: UISwitch) {
         changeWeekFlagState(4, button: ThuSwitch)
-        // test print
+        // Test print
         print("Thuday is \(tempWeekFlags[4])")
     }
     @IBAction func FriAction(sender: UISwitch) {
         changeWeekFlagState(5, button: FriSwitch)
-        // test print
+        // Test print
         print("Friday is \(tempWeekFlags[5])")
     }
     @IBAction func SatAction(sender: UISwitch) {
         changeWeekFlagState(6, button: SatSwitch)
-        // test print
+        // Test print
         print("Satday is \(tempWeekFlags[6])")
     }
+
+    // Datepicker functions
     @IBAction func start_dp_func(sender: AnyObject) {
-        // set date format
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = format
-        // set date to temp var
+
+        // Set a date to the temp var
         tempStartTime = formatter.stringFromDate(start_dp.date)
-        // test print
+
+        // Test print
         print("tempStartTime: \(tempStartTime)")
     }
     @IBAction func stop_dp_func(sender: AnyObject) {
-        // set format
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = format
-        // set date to temp var
+
+        // Set a date to the temp var
         tempStopTime = formatter.stringFromDate(stop_dp.date)
-        // test print
+
+        // Test print
         print("tempStopTime: \(tempStopTime)")
     }
     
-    // uniqueness functions
-    // initialize uniqueness variables funciton
+
+    // Uniqueness functions
+
+    // Initialize uniqueness variables
     func initialize() {
-        // initialize other vars with NSUserDefault
+
+        // Initialize the format
+        self.formatter.dateFormat = format // HHmm
+
+        // Initialize other vars with the NSUserDefault
         onOffStatus = defaults.objectForKey("onOffStatus") as! Bool
         onOffSwitch.on = onOffStatus
         for i in 0...6 { weekFlags[i] = defaults.objectForKey("weekFlags\(i)") as! Bool }
@@ -168,16 +209,18 @@ class ViewController: UITableViewController {
         changeButtonState()
         startTime = defaults.objectForKey("startTime") as! String
         stopTime = defaults.objectForKey("stopTime") as! String
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = format
         start_dp.date = formatter.dateFromString(startTime)!
         stop_dp.date = formatter.dateFromString(stopTime)!
-        // initialize temp variables
+
+        // Initialize temp variables
         tempStartTime = startTime
         tempStopTime = stopTime
         tempWeekFlags = weekFlags
-        getNowTime() // initialize weekday
-        // test print
+
+        initAlert() // Initialize UIAlertControler
+        getNowTime() // Initialize weekday
+
+        // Test print
         print("onOffStatus: \(onOffStatus)")
         print("startTime: \(startTime)")
         print("stopTime: \(stopTime)")
@@ -187,47 +230,109 @@ class ViewController: UITableViewController {
         print("tempWeekFlags: \(tempWeekFlags)")
         print("initialized!!")
     }
-    // get now date function
+
+    // Alert functions
+
+    // Check whether the time to alert
+    func update() {
+        setAlert(getNowTime())
+    }
+    
+    // Get the formated current date
     func getNowTime()-> String {
-        // gat now date
+        
+        // Gat the current date
         let nowTime: NSDate = NSDate()
-        // set format
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = format
-        // get weekday as int
+        
+        // Set a local format for the Alerm function
+        let local_formatter = NSDateFormatter()
+        local_formatter.dateFormat = "HHmmss"
+        
+        // Get the weekday as integer
         let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierJapanese)!
         let myComponents = myCalendar.components(.Weekday, fromDate: nowTime)
         weekday = myComponents.weekday
-        // return formated date
-        return formatter.stringFromDate(nowTime)
+        
+        // Return the formated date
+        return local_formatter.stringFromDate(nowTime)
     }
-    //
-    func update() {
-        // if alert time then ...
-        setAlertFlag(getNowTime())
-        if alertFlag { alert() }
+
+    // Initialize the Alert settings
+    func initAlert() {
+
+        // Add a text field to the Alert
+        myAlert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
+            textField.clearsOnBeginEditing = true
+            textField.placeholder = "text is here"
+        })
+
+        // Add a action to the Alert
+        myAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+            let textField = self.myAlert.textFields![0] as UITextField
+            self.ans_str = textField.text
+            self.resetAlert()
+        }))
     }
-    // alarm func
-    func setAlertFlag(str: String) {
-        if onOffStatus && weekFlags[weekday-1] {
-            if str == startTime { alertFlag = true }
-            if str == stopTime { alertFlag = false }
+
+    // Comparing the input-text and random-text function
+    func resetAlert() {
+        if ans_str != rnd_str {
+            setAlert("\(startTime)00") // Re-output the Alert
+        }
+        else{
+            setAlert("\(stopTime)00") // Stop the Alert
         }
     }
-    // output alert func
-    func alert() {
-        // for test
-        alertFlag = false
-        // set alert
-        let myAlert = UIAlertController(title: "alert", message: "ring ding", preferredStyle: .Alert)
-        let myAction = UIAlertAction(title: "dong", style: .Default) {
-            action in print("foo!!")
+
+    // Main of the Alerm
+    func setAlert(str: String) {
+
+        // Referenced
+        // http://stackoverflow.com/questions/26567413/how-to-get-input-value-from-textfield-in-alert
+
+        // Start
+        if str == "\(startTime)00" {
+    
+            // Get a random string
+            rnd_str = randomStringWithLength (3)
+    
+            // Enable the alert
+            myAlert.message = "Enter the text below\n\(rnd_str)"
+            presentViewController(myAlert, animated: true, completion: nil)
+    
+            // Test print
+            print("Alert started!")
+
+        // Stop
+        } else if str == "\(stopTime)00" {
+
+            // Disable the alert
+            myAlert.message = "exit"
+            myAlert.dismissViewControllerAnimated(true, completion: nil)
+
+            // Test print
+            print("Alert stoped!")
         }
-        myAlert.addAction(myAction)
-        // output
-        presentViewController(myAlert, animated: true, completion: nil)
     }
-    //
+    
+    // Generate a random string for the alert function
+    func randomStringWithLength (len : Int) -> NSString {
+        // Referenced
+        // http://stackoverflow.com/questions/26845307/generate-random-alphanumeric-string-in-swift
+        
+        let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        let randomString : NSMutableString = NSMutableString(capacity: len)
+        for (var i=0; i < len; i++){
+            let length = UInt32 (letters.length)
+            let rand = arc4random_uniform(length)
+            randomString.appendFormat("%C", letters.characterAtIndex(Int(rand)))
+        }
+        return randomString
+    }
+
+    // Chenge some state functions
+
+    // Change a button.enabled with the onOffSwitch state
     func changeButtonState(){
         MonSwitch.enabled=onOffSwitch.on
         TueSwitch.enabled=onOffSwitch.on
@@ -237,7 +342,8 @@ class ViewController: UITableViewController {
         SatSwitch.enabled=onOffSwitch.on
         SunSwitch.enabled=onOffSwitch.on
     }
-    //
+
+    // Change tempweekFlags with the weekButton
     func changeWeekFlagState(i: Int, button: UISwitch) {
         tempWeekFlags[i] = button.on ? true : false
         print("tempWeekFlags\(i): \(tempWeekFlags[i])")
