@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starlogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="eAk-sK-2CG">
+                    <rect key="frame" x="250" y="250" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="Q99-82-4KI"/>
+                        <constraint firstAttribute="height" constant="100" id="RIa-5k-N0Y"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="eAk-sK-2CG" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="GFb-98-U0u"/>
+                <constraint firstItem="eAk-sK-2CG" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="UzK-WI-J1L"/>
+                <constraint firstItem="eAk-sK-2CG" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Yic-Ou-Z2P"/>
+                <constraint firstItem="eAk-sK-2CG" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="kYh-NR-C4P"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="starlogo.png" width="1000" height="1000"/>
+    </resources>
+</document>

@@ -11,9 +11,10 @@
 		610237AD1C0ECF47005F6490 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610237AC1C0ECF47005F6490 /* ViewController.swift */; };
 		610237B01C0ECF47005F6490 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 610237AE1C0ECF47005F6490 /* Main.storyboard */; };
 		610237B21C0ECF47005F6490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 610237B11C0ECF47005F6490 /* Assets.xcassets */; };
-		610237B51C0ECF47005F6490 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 610237B31C0ECF47005F6490 /* LaunchScreen.storyboard */; };
 		610237C01C0ECF47005F6490 /* AlarmV2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610237BF1C0ECF47005F6490 /* AlarmV2Tests.swift */; };
 		610237CB1C0ECF47005F6490 /* AlarmV2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610237CA1C0ECF47005F6490 /* AlarmV2UITests.swift */; };
+		619402B51C5882D7005105C7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 619402B41C5882D7005105C7 /* LaunchScreen.xib */; };
+		619402B71C588AB2005105C7 /* starlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 619402B61C588AB2005105C7 /* starlogo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,6 @@
 		610237AC1C0ECF47005F6490 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		610237AF1C0ECF47005F6490 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		610237B11C0ECF47005F6490 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		610237B41C0ECF47005F6490 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		610237B61C0ECF47005F6490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		610237BB1C0ECF47005F6490 /* AlarmV2.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlarmV2.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		610237BF1C0ECF47005F6490 /* AlarmV2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmV2Tests.swift; sourceTree = "<group>"; };
@@ -47,6 +47,8 @@
 		610237C61C0ECF47005F6490 /* AlarmV2.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlarmV2.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		610237CA1C0ECF47005F6490 /* AlarmV2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmV2UITests.swift; sourceTree = "<group>"; };
 		610237CC1C0ECF47005F6490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		619402B41C5882D7005105C7 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = ../LaunchScreen.xib; sourceTree = "<group>"; };
+		619402B61C588AB2005105C7 /* starlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starlogo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +102,9 @@
 				610237AA1C0ECF47005F6490 /* AppDelegate.swift */,
 				610237AC1C0ECF47005F6490 /* ViewController.swift */,
 				610237AE1C0ECF47005F6490 /* Main.storyboard */,
+				619402B41C5882D7005105C7 /* LaunchScreen.xib */,
+				619402B61C588AB2005105C7 /* starlogo.png */,
 				610237B11C0ECF47005F6490 /* Assets.xcassets */,
-				610237B31C0ECF47005F6490 /* LaunchScreen.storyboard */,
 				610237B61C0ECF47005F6490 /* Info.plist */,
 			);
 			path = AlarmV2;
@@ -232,8 +235,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				610237B51C0ECF47005F6490 /* LaunchScreen.storyboard in Resources */,
+				619402B51C5882D7005105C7 /* LaunchScreen.xib in Resources */,
 				610237B21C0ECF47005F6490 /* Assets.xcassets in Resources */,
+				619402B71C588AB2005105C7 /* starlogo.png in Resources */,
 				610237B01C0ECF47005F6490 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,14 +306,6 @@
 				610237AF1C0ECF47005F6490 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		610237B31C0ECF47005F6490 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				610237B41C0ECF47005F6490 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
