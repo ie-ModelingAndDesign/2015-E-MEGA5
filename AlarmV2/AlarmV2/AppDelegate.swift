@@ -13,28 +13,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-
-/*        // ▼ 1. windowの背景色にLaunchScreen.xibのviewの背景色と同じ色を設定
-       self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-    self.window!.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 90/255, alpha: 1)
-       self.window!.makeKeyAndVisible()
         
-        // ▼ 2. rootViewControllerをStoryBoardから設定 (今回はUINavigationControllerとして     let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let navigationController = mainStoryboard.instantiateViewControllerWithIdentifier("navigationController")
+        self.window!.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 90/255, alpha: 1)
+        self.window!.makeKeyAndVisible()
+        
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let navigationController = mainStoryboard.instantiateViewControllerWithIdentifier("ViewController")
         self.window!.rootViewController = navigationController
         
-        // ▼ 3. rootViewController.viewをロゴ画像の形にマスクし、LaunchScreen.xibのロゴ画像と同サイズ・同位置に配置
         navigationController.view.layer.mask = CALayer()
-        navigationController.view.layer.mask!.contents = UIImage(named: "starlogo.png")!.CGImage
+        navigationController.view.layer.mask!.contents = UIImage(named: "moonlogo.png")!.CGImage
         navigationController.view.layer.mask!.bounds = CGRect(x: 0, y: 0, width: 100, height: 100)
         navigationController.view.layer.mask!.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         navigationController.view.layer.mask!.position = CGPoint(x: navigationController.view.frame.width / 2, y: navigationController.view.frame.height / 2)
         
         // ▼ 4. rootViewController.viewの最前面に白いviewを配置
-    let maskBgView = UIView(frame: navigationController.view.frame)
-       maskBgView.backgroundColor = UIColor.whiteColor()
+        let maskBgView = UIView(frame: navigationController.view.frame)
+        maskBgView.backgroundColor = UIColor.whiteColor()
         navigationController.view.addSubview(maskBgView)
         navigationController.view.bringSubviewToFront(maskBgView)
         // use NSUD and set default var
@@ -45,13 +41,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         for i in 0...6 { defaults.registerDefaults(["weekFlags\(i)": false]) }
         
         // ▼ 5. rootViewController.viewのマスクを少し縮小してから、画面サイズよりも大きくなるよう拡大するアニメーション
-       let transformAnimation = CAKeyframeAnimation(keyPath: "bounds")
+        let transformAnimation = CAKeyframeAnimation(keyPath: "bounds")
         transformAnimation.delegate = self
         transformAnimation.duration = 1
         transformAnimation.beginTime = CACurrentMediaTime() + 1 // 開始タイミングを1秒遅らせる
         let initalBounds = NSValue(CGRect: navigationController.view.layer.mask!.bounds)
         let secondBounds = NSValue(CGRect: CGRect(x: 0, y: 0, width: 50, height: 50))
-        let finalBounds = NSValue(CGRect: CGRect(x: 0, y: 0, width: 2000, height: 2000))
+        let finalBounds = NSValue(CGRect: CGRect(x: 0, y: 0, width: 4000, height: 4000))
         transformAnimation.values = [initalBounds, secondBounds, finalBounds]
         transformAnimation.keyTimes = [0, 0.5, 1]
         transformAnimation.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut), CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)]
@@ -86,18 +82,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     },
                     completion: nil
                 )
-        }) */
+        })
         
-       return true
+        
+        
+        return true
     }
     
-/*    // ▼ 8. 「5.」のアニメーション完了時のdelegateメソッドを実装し、マスクを削除する
+    
     override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
         // remove mask when animation completes
         self.window!.rootViewController!.view.layer.mask = nil
-    }  */
-
-
+    }
+    
+    
     
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -120,6 +118,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-        
+    
+    
 }
