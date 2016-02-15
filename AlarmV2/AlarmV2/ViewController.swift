@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class ViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     // Get the NSUserDefaults instance
     let defaults = NSUserDefaults.standardUserDefaults()
@@ -16,6 +16,19 @@ class ViewController: UITableViewController {
     // Main rutine
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // connect UIPickerView
+        self.myPicker.delegate = self
+        self.myPicker.dataSource = self
+        
+        
+        //ホーム画面に戻ろうとしたとき用
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.addObserver(
+            self,
+            selector: "func1",
+            name:UIApplicationDidEnterBackgroundNotification,
+            object: nil)
         
         // Initialization
         initialize()
@@ -29,6 +42,22 @@ class ViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // ホーム画面に戻ろうとしたとき用関数
+    func func1(){
+        if alertStatus {
+            let notification = UILocalNotification()
+            notification.alertBody = "You're really bummer..."
+            UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+            UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+            UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+            UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+            UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+            UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+            UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+            UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+            UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+        }
+    }
     
     // IB variables
     
@@ -51,6 +80,9 @@ class ViewController: UITableViewController {
     @IBOutlet weak var start_dp: UIDatePicker!
     @IBOutlet weak var stop_dp: UIDatePicker!
     
+    // Picker
+    @IBOutlet weak var myPicker: UIPickerView!
+    
     
     // Uniqueness variables
     
@@ -66,7 +98,9 @@ class ViewController: UITableViewController {
     private var weekday: Int = 99
     private var rnd_str: NSString = ""
     private var ans_str: String? = ""
-    private var a_count = 0
+    private var initRandStringLen = 0
+    private var remaningNum = 0
+    private var strLen = 0
     private var remaning = 0
     private let myAlert = UIAlertController(title: "Sleep alert", message: "exit", preferredStyle: .Alert)
     
@@ -74,11 +108,14 @@ class ViewController: UITableViewController {
     private var tempStartTime: String = "0000"
     private var tempStopTime: String = "0000"
     private var tempWeekFlags = [false, false, false, false, false, false, false]
+    private var tempRandStringLen = 0
+    private var tempRemaningNum = 0
+    private var alertStatus = false
     
     // Formating variables
     private let formatter = NSDateFormatter()
     private let format: String = "HHmm"
-    
+    private let pickerData = [[10,20,30,40,50],[1,2,3,4,5]]
     
     // IB functions
     
@@ -89,11 +126,17 @@ class ViewController: UITableViewController {
         startTime = formatter.stringFromDate(start_dp.date)
         stopTime = formatter.stringFromDate(stop_dp.date)
         weekFlags = tempWeekFlags
+        initRandStringLen = tempRandStringLen
+        remaningNum = tempRemaningNum
+        
+        alertStatus = false
         
         // Store vars to NSUserDefaults
         defaults.setObject(startTime, forKey: "startTime")
         defaults.setObject(stopTime, forKey: "stopTime")
         for i in 0...6 { defaults.setObject(weekFlags[i], forKey: "weekFlags\(i)") }
+        defaults.setObject(initRandStringLen, forKey: "initRandStringLen")
+        defaults.setObject(remaningNum, forKey: "remaningNum")
         let successful = defaults.synchronize()
         if successful {
             print("succeeded to store data!")
@@ -188,6 +231,28 @@ class ViewController: UITableViewController {
         print("tempStopTime: \(tempStopTime)")
     }
     
+    // UIPicker
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 2
+    }
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData[0].count
+    }
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return String(pickerData[component][row])
+    }
+    // UIPicker function
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        if component == 0 {
+            self.tempRandStringLen = row
+            print("tempRandStringLen: \(pickerData[0][tempRandStringLen])")
+        } else {
+            self.tempRemaningNum = row
+            print("tempRemaningNum: \(pickerData[1][tempRemaningNum])")
+        }
+    }
+    
     
     // Uniqueness functions
     
@@ -213,11 +278,19 @@ class ViewController: UITableViewController {
         stopTime = defaults.objectForKey("stopTime") as! String
         start_dp.date = formatter.dateFromString(startTime)!
         stop_dp.date = formatter.dateFromString(stopTime)!
+        initRandStringLen = defaults.objectForKey("initRandStringLen") as! Int
+        remaningNum = defaults.objectForKey("remaningNum") as! Int
+        myPicker.selectRow(initRandStringLen, inComponent: 0, animated: false);
+        myPicker.selectRow(remaningNum, inComponent: 1, animated: false);
         
         // Initialize temp variables
         tempStartTime = startTime
         tempStopTime = stopTime
         tempWeekFlags = weekFlags
+        tempRandStringLen = initRandStringLen
+        tempRemaningNum = remaningNum
+        
+        alertStatus = false
         
         initAlert() // Initialize UIAlertControler
         getNowTime() // Initialize weekday
@@ -230,6 +303,8 @@ class ViewController: UITableViewController {
         print("tempStartTime: \(tempStartTime)")
         print("tempStopTime: \(tempStopTime)")
         print("tempWeekFlags: \(tempWeekFlags)")
+        print("tempRemaningLen: \(tempRandStringLen)")
+        print("tempRemaningNum: \(tempRemaningNum)")
         print("initialized!!")
     }
     
@@ -276,8 +351,8 @@ class ViewController: UITableViewController {
         }))
         
         // Set the counts
-        a_count = 1
-        remaning = 5
+        strLen = pickerData[0][initRandStringLen]
+        remaning = pickerData[1][remaningNum]
     }
     
     // Comparing the input-text and random-text function
@@ -286,8 +361,7 @@ class ViewController: UITableViewController {
             setAlert("\(startTime)00") // Re-output the Alert
         }
         else{
-            a_count++
-            remaning--
+            remaning-- // dicrease remaning number
             setAlert("\(startTime)00") // Re-output the Alert
         }
     }
@@ -301,12 +375,18 @@ class ViewController: UITableViewController {
         // Start
         if str == "\(startTime)00" {
             
+            // Set the counts
+            strLen = pickerData[0][initRandStringLen]
+            remaning = pickerData[1][remaningNum]
+            
             // Get a random string
-            rnd_str = randomStringWithLength (3*a_count)
+            rnd_str = randomStringWithLength (strLen)
             
             // Enable the alert
-            myAlert.message = "Enter the text below(remaining... \(remaning))\n\(rnd_str)"
+            myAlert.message = "Enter the text below. (remaining... \(remaning))\n\(rnd_str)"
             presentViewController(myAlert, animated: true, completion: nil)
+            
+            alertStatus = true
             
             // Test print
             print("Alert started!")
@@ -318,8 +398,8 @@ class ViewController: UITableViewController {
             // Disable the alert
             myAlert.message = "exit"
             myAlert.dismissViewControllerAnimated(true, completion: nil)
-            a_count = 1
-            remaning = 5
+            
+            alertStatus = false
             
             // Test print
             print("Alert stoped!")

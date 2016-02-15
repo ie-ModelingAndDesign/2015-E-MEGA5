@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jjf-qV-c72">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jjf-qV-c72">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -18,7 +18,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="600" height="74"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
-                                <navigationItem title="入眠アラーム(仮)" prompt=" " id="myh-8O-Cvx">
+                                <navigationItem title="入眠アラーム" prompt=" " id="myh-8O-Cvx">
                                     <barButtonItem key="rightBarButtonItem" title="Set" id="WNc-7c-y9G">
                                         <connections>
                                             <action selector="setting:" destination="jjf-qV-c72" id="hdp-Lj-5YO"/>
@@ -350,6 +350,28 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Stop" id="9PX-6j-r3b" userLabel="RandStr&amp;Rim">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="date" id="nZe-ZU-Ep0" userLabel="pick">
+                                        <rect key="frame" x="0.0" y="654" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nZe-ZU-Ep0" id="wQU-Kc-9CU">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0jw-ct-kf3">
+                                                    <rect key="frame" x="0.0" y="-86" width="600" height="216"/>
+                                                </pickerView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="0jw-ct-kf3" secondAttribute="trailing" id="gEm-Ax-VRk"/>
+                                                <constraint firstItem="0jw-ct-kf3" firstAttribute="centerY" secondItem="wQU-Kc-9CU" secondAttribute="centerY" id="r4I-E0-Bbu"/>
+                                                <constraint firstItem="0jw-ct-kf3" firstAttribute="leading" secondItem="wQU-Kc-9CU" secondAttribute="leading" id="wkd-bY-isH"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="jjf-qV-c72" id="7Fx-vU-bTp"/>
@@ -365,6 +387,7 @@
                         <outlet property="ThuSwitch" destination="fDR-V0-3GY" id="CBv-9Y-RMR"/>
                         <outlet property="TueSwitch" destination="E7V-0e-086" id="KW1-jm-O2v"/>
                         <outlet property="WedSwitch" destination="frX-gX-AbS" id="gLO-Ud-8dD"/>
+                        <outlet property="myPicker" destination="0jw-ct-kf3" id="Xrd-4j-8zc"/>
                         <outlet property="onOffSwitch" destination="mLr-cs-Kaw" id="9ej-o0-xsR"/>
                         <outlet property="start_dp" destination="nN9-aK-Jmc" id="qU7-PL-7MA"/>
                         <outlet property="stop_dp" destination="hTa-Sj-bCt" id="Pne-WV-0fK"/>

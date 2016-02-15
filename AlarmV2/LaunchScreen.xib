@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -11,22 +11,22 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moonlogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="kaA-RJ-yIp">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starlogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="x5B-CQ-M02">
                     <rect key="frame" x="250" y="250" width="100" height="100"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="100" id="8X3-Yy-8Qy"/>
-                        <constraint firstAttribute="width" constant="100" id="l7B-V8-Pai"/>
+                        <constraint firstAttribute="height" constant="100" id="2eX-QF-tt0"/>
+                        <constraint firstAttribute="width" constant="100" id="e5k-sZ-Rsg"/>
                     </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="kaA-RJ-yIp" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="onu-Mx-Pd9"/>
-                <constraint firstItem="kaA-RJ-yIp" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rhg-HM-id2"/>
+                <constraint firstItem="x5B-CQ-M02" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1Mv-N1-8wH"/>
+                <constraint firstItem="x5B-CQ-M02" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="phK-es-0G2"/>
             </constraints>
         </view>
     </objects>
     <resources>
-        <image name="moonlogo.png" width="1000" height="1000"/>
+        <image name="starlogo.png" width="1000" height="1000"/>
     </resources>
 </document>
