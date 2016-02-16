@@ -350,7 +350,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Stop" id="9PX-6j-r3b" userLabel="RandStr&amp;Rim">
+                            <tableViewSection headerTitle="Length &amp; Remaning" id="9PX-6j-r3b" userLabel="RandStr&amp;Rim">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="date" id="nZe-ZU-Ep0" userLabel="pick">
                                         <rect key="frame" x="0.0" y="654" width="600" height="44"/>

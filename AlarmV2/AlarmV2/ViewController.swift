@@ -129,6 +129,11 @@ class ViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewD
         initRandStringLen = tempRandStringLen
         remaningNum = tempRemaningNum
         
+        // Set the counts
+        strLen = pickerData[0][initRandStringLen]
+        remaning = pickerData[1][remaningNum]
+        print("strLen=\(strLen), remaning=\(remaning))")
+        
         alertStatus = false
         
         // Store vars to NSUserDefaults
@@ -353,6 +358,7 @@ class ViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewD
         // Set the counts
         strLen = pickerData[0][initRandStringLen]
         remaning = pickerData[1][remaningNum]
+        print("strLen=\(strLen), remaning=\(remaning))")
     }
     
     // Comparing the input-text and random-text function
@@ -375,10 +381,6 @@ class ViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewD
         // Start
         if str == "\(startTime)00" {
             
-            // Set the counts
-            strLen = pickerData[0][initRandStringLen]
-            remaning = pickerData[1][remaningNum]
-            
             // Get a random string
             rnd_str = randomStringWithLength (strLen)
             
@@ -394,6 +396,11 @@ class ViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewD
             
             // Stop
         } else if str == "\(stopTime)00" || remaning == 0 {
+            
+            // Set the counts
+            strLen = pickerData[0][initRandStringLen]
+            remaning = pickerData[1][remaningNum]
+            print("strLen=\(strLen), remaning=\(remaning))")
             
             // Disable the alert
             myAlert.message = "exit"
